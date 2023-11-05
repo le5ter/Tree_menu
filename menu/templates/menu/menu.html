@@ -1,0 +1,23 @@
+<!doctype html>
+{% load menu_tags %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tree menu</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    {% autoescape off %}
+    {% draw_menu "main_menu" request.get_full_path %}
+    {% endautoescape %}
+
+    <br>
+    {% autoescape off %}
+    {% draw_menu "menu2" request.get_full_path %}
+    {% endautoescape %}
+</body>
+</html>
